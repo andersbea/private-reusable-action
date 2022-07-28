@@ -11,7 +11,7 @@ jobs:
           # token: ${{ secrets.TOKEN}} We won't use this within this example repository, as it is public for your sake
           path: reusable-actions
       - name: Run reusable workflow
-        uses: ./reusable-actions/hello-world.yaml
+        uses: ./reusable-actions/hello-world
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
