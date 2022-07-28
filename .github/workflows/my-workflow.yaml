@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: my-org/reusable-actions
+          repository: andersbea/private-reusable-actions
           # token: ${{ secrets.TOKEN}} We won't use this within this example repository, as it is public for your sake
           path: reusable-actions
       - name: Run reusable workflow
