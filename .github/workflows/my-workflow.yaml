@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: my-org/reusable-actions
+          token: ${{ secrets.TOKEN}}
+          path: reusable-actions
+      - name: Run reusable workflow
+        uses: ./reusable-actions/hello-world.yaml
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
